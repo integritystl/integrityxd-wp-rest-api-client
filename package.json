@@ -1,6 +1,6 @@
 {
   "name": "@integrityxd/wp-rest-api-client",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A low-level npm package for WordPress REST API requests",
   "main": "dist/index.js",
   "types": "index.d.ts",
