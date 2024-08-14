@@ -1,6 +1,6 @@
 {
   "name": "@integrityxd/wp-rest-api-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A low-level npm package for WordPress REST API requests",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -20,7 +20,7 @@
     "rest",
     "api"
   ],
-  "author": "Your Name",
+  "author": "Integrity Web Solutions LLC",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.24.0",
