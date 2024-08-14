@@ -1,11 +1,11 @@
-# WordPress REST API Package
+# @integrityxd/wp-rest-api-client
 
 This package provides a typed, low-level interface for interacting with the WordPress REST API using a functional approach. It uses Axios for making HTTP requests.
 
 ## Installation
 
 ```bash
-npm install wordpress-rest-api axios
+npm install @integrityxd/wp-rest-api-client axios
 ```
 
 ## Usage
