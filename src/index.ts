@@ -1,13 +1,9 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
 import { Buffer } from 'buffer';
 
-interface WordPressItem {
-  [key: string]: unknown;
-}
-
 export function createWordPressAPI(axiosInstance: AxiosInstance) {
   return {
-    async insertItem(url: string, data: WordPressItem): Promise<AxiosResponse<WordPressItem>> {
+    async insertItem<T = any>(url: string, data: T): Promise<AxiosResponse<T>> {
       return axiosInstance({
         method: 'POST',
         url,
@@ -32,7 +28,7 @@ export function createWordPressAPI(axiosInstance: AxiosInstance) {
       });
     },
 
-    async updateItem(url: string, data: WordPressItem): Promise<AxiosResponse<WordPressItem>> {
+    async updateItem<T = any>(url: string, data: Partial<T>): Promise<AxiosResponse<T>> {
       return axiosInstance({
         method: 'PUT',
         url,
@@ -40,7 +36,7 @@ export function createWordPressAPI(axiosInstance: AxiosInstance) {
       });
     },
 
-    async updateItemBuffer(url: string, data: Buffer, filename: string): Promise<AxiosResponse<WordPressItem>> {
+    async updateItemBuffer<T = any>(url: string, data: Buffer, filename: string): Promise<AxiosResponse<T>> {
       const fileExtension = (filename.match(/\.([^.]+)$/) ?? ['jpg'])[0];
       const contentTypeMap: Record<string, string> = {
         jpg: 'image/jpeg',
@@ -53,7 +49,7 @@ export function createWordPressAPI(axiosInstance: AxiosInstance) {
         webp: 'image/webp',
         heic: 'image/heic',
       };
-      const contentType = contentTypeMap[fileExtension.toLowerCase()];
+      const contentType = contentTypeMap[fileExtension.toLowerCase()] || 'application/octet-stream';
 
       return axiosInstance({
         method: 'POST',
@@ -66,13 +62,13 @@ export function createWordPressAPI(axiosInstance: AxiosInstance) {
       });
     },
 
-    async fetchAllItems(url: string, extraParams: Record<string, unknown> = {status: ['publish', 'future']}): Promise<WordPressItem[]> {
-      let allItems: WordPressItem[] = [];
+    async fetchAllItems<T = any>(url: string, extraParams: Record<string, unknown> = {status: ['publish', 'future']}): Promise<T[]> {
+      let allItems: T[] = [];
       let currentPage = 1;
       let totalPages = 1;
 
       while (currentPage <= totalPages) {
-        const response = await axiosInstance(url, {
+        const response = await axiosInstance<T[]>(url, {
           params: {
             page: currentPage,
             per_page: 100,
