@@ -11,7 +11,7 @@ module.exports = {
     '^.+\\.(js|jsx|mjs)$': 'esbuild-jest',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(msw|@mswjs)/)'
+    'node_modules/(?!(msw|@mswjs|until-async)/)'
   ],
   setupFilesAfterEnv: ['<rootDir>/src/test/setupTests.ts'],
 };
