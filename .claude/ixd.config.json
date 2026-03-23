@@ -1,0 +1,15 @@
+{
+  "skills": {
+    "ixd-workflow": {
+      "trunkBranch": "dev",
+      "packageManager": "yarn",
+      "gutCheck": ["lint", "test"],
+      "nodeVersion": "22",
+      "defaultReviewers": ["embmeals"],
+      "mondayStatusAfterComplete": ""
+    },
+    "ixd-create-story": {
+      "storyDirectory": "docs/stories"
+    }
+  }
+}
