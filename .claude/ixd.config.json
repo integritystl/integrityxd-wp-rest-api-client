@@ -2,7 +2,7 @@
   "skills": {
     "ixd-workflow": {
       "trunkBranch": "dev",
-      "packageManager": "yarn",
+      "packageManager": "npm",
       "gutCheck": ["lint", "test"],
       "nodeVersion": "22",
       "defaultReviewers": ["embmeals"],
