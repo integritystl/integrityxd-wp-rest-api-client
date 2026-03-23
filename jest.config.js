@@ -7,8 +7,7 @@ module.exports = {
     '**/?(*.)+(spec|test).+(ts|tsx|js)'
   ],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
-    '^.+\\.(js|jsx|mjs)$': 'esbuild-jest',
+    '^.+\\.(ts|tsx|js|jsx|mjs)$': 'ts-jest',
   },
   transformIgnorePatterns: [
     'node_modules/(?!(msw|@mswjs|until-async)/)'
