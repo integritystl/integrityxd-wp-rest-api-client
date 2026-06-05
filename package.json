@@ -1,6 +1,6 @@
 {
   "name": "@integrityxd/wp-rest-api-client",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A low-level npm package for WordPress REST API requests",
   "main": "dist/index.js",
   "types": "index.d.ts",
@@ -45,6 +45,7 @@
   },
   "overrides": {
     "braces": "^3.0.3",
-    "js-yaml": ">=3.14.2"
+    "js-yaml": ">=3.14.2",
+    "brace-expansion": ">=1.1.13"
   }
 }
