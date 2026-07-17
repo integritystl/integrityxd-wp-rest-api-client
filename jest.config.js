@@ -10,7 +10,7 @@ module.exports = {
     '^.+\\.(ts|tsx|js|jsx|mjs)$': 'ts-jest',
   },
   transformIgnorePatterns: [
-    'node_modules/(?!(msw|@mswjs|until-async)/)'
+    'node_modules/(?!(msw|@mswjs|until-async|rettime|@open-draft)/)'
   ],
   setupFilesAfterEnv: ['<rootDir>/src/test/setupTests.ts'],
 };
